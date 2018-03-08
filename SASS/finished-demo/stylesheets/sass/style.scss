@@ -1,0 +1,90 @@
+@import "fonts";
+// Variables
+  $font-primary: "DiavloBlack", Helvetica, arial, sans-serif;
+  $primary-color: #00aca0;
+
+// Variables in use
+  body {
+    font: 100% $font-primary; 
+    background-color: darken($primary-color, 30%);
+  }
+
+  h1,h2,h3,h4,h5{
+    color: $primary-color;
+    font: $font-primary;  
+  }
+
+  a{
+    color: $primary-color;
+  }
+
+
+// .SCSS Format
+  .people {
+    border: solid 1px $primary-color;
+    .row {      
+     .col-md-4 {
+        padding: 100px 0px;
+        h2{
+          text-transform: capitalize;
+          color: lighten($primary-color, 35%);
+        }  
+      }    
+    }   
+
+
+// Extended Class 
+  .teal-background{
+    background: $primary-color;
+    padding: 20px;    
+  }
+
+// Extended Class In Use & Color Darken & Lighten
+  .widget{
+    min-height: 100px;
+    @extend .teal-background;
+    h2{
+      color: darken($primary-color, 15%);
+      &:hover{
+        color: lighten($primary-color, 25%);
+      }
+      &:active{
+
+      }
+    }
+   }
+
+    
+  
+
+
+    // This does the same thing with less code in SASS
+    .people{
+      background-size: cover;
+    }
+    @each $name in erica, james, jamie, jessica, sarah, tom {
+      .people-#{$name} {
+        background-image: url('../../img/#{$name}.jpg');
+      }
+    }
+  }
+
+
+   .btn{
+   		border-radius:0px;	
+   		&-default{
+   			background-color:blue;
+   		}
+   		&-primary{
+   			background-color:red;
+   		}
+   }
+
+
+   footer{
+     color: #fff;
+   }
+
+
+
+
